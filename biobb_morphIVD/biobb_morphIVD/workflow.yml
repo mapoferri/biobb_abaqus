@@ -1,0 +1,20 @@
+working_dir_path: abaqus
+can_write_console_log: False
+run_md: true
+
+template:
+  paths:
+    fileIn: ''
+    output_path: ''
+  properties:
+    device: cpu
+    m: ''
+    i: ''
+    e: ''
+    r: ''
+    w: ''
+    y: ''
+    f: ''
+    c: ''
+    d: ''
+    CEP: ''

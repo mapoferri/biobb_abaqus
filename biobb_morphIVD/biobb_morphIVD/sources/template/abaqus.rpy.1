@@ -1,0 +1,133 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2020 replay file
+# Internal Version: 2019_09_13-20.49.31 163176
+# Run by estefanaxo on Mon Dec  5 15:17:35 2022
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Abaqus Warning: Keyword (dsls_license_config) must point to an existing file.
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=596.996643066406, 
+    height=232.039566040039)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+#: Abaqus Warning: Keyword (dsls_license_config) must point to an existing file.
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.ModelFromInputFile(name='L4-L5_shell', 
+    inputFileName='/home/estefanaxo/Documentos/phd/tesis/discsToMorph/sources/template/L4-L5_shell.inp')
+#: The model "L4-L5_shell" has been created.
+#: WARNING: Orientation "LOCALAF" with definition of offset to nodes is not yet supported for rebar layer. 
+#: WARNING: Orientation "LOCALAF" with definition of offset to nodes is not yet supported for rebar layer. 
+#: WARNING: Orientation "LOCALAF" with definition of offset to nodes is not yet supported for rebar layer. 
+#: WARNING: Orientation "LOCALAF" with definition of offset to nodes is not yet supported for rebar layer. 
+#: The part "L4-L5-1" has been imported from the input file.
+#: 
+#: WARNING: The following keywords/parameters are not yet supported by the input file reader:
+#: ---------------------------------------------------------------------------------
+#: *PERMEABILITY, DEPENDENCIES
+#: *PREPRINT
+#: The model "L4-L5_shell" has been imported from an input file. 
+#: Please scroll up to check for error and warning messages.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+a = mdb.models['L4-L5_shell'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+mdb.meshEditOptions.setValues(enableUndo=True, maxUndoCacheElements=0.5)
+p = mdb.models['L4-L5_shell'].parts['L4-L5-1']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+p = mdb.models['L4-L5_shell'].parts['L4-L5-1']
+p.deleteElement(elements=[p.sets['AF'], p.sets['AF-Z1'], p.sets['AF-Z2'], 
+    p.sets['AF_REBARS'], p.sets['BEPLOWER'], p.sets['BEPUPPER'], p.sets['NP'], 
+    p.sets['NP-Z1'], p.sets['NP-Z2'], p.sets['NP-Z3'], p.sets['NP-Z4'], 
+    p.sets['NP-Z5'], p.sets['REBARS_AI'], p.sets['REBARS_AO'], 
+    p.sets['REBARS_PI'], p.sets['REBARS_PO']], deleteUnreferencedNodes=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=110.189, 
+    farPlane=167.3, width=111.22, height=48.5552, cameraPosition=(-35.9373, 
+    -130.17, 26.9618), cameraUpVector=(0.0757667, 0.516925, 0.852671), 
+    cameraTarget=(0.902989, 0.183643, -1.2466))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=114.967, 
+    farPlane=163.147, width=116.042, height=50.6605, cameraPosition=(-6.87452, 
+    -136.757, 17.0382), cameraUpVector=(-0.049348, 0.458356, 0.887398), 
+    cameraTarget=(0.982469, 0.165629, -1.27374))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=115.958, 
+    farPlane=162.422, width=117.043, height=51.0973, cameraPosition=(-3.10961, 
+    -138.04, 4.04756), cameraUpVector=(0.000957816, 0.369912, 0.929066), 
+    cameraTarget=(1.00118, 0.159253, -1.33831))
+p = mdb.models['L4-L5_shell'].parts['L4-L5-1']
+e = p.elements
+elements = e.getSequenceFromMask(mask=(
+    '[#0:80 #ff000000 #ffffffff:80 #ffffff ]', ), )
+p.deleteElement(elements=elements, deleteUnreferencedNodes=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=119.626, 
+    farPlane=157.83, width=66.2861, height=28.9384)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=114.186, 
+    farPlane=158.425, width=63.2716, height=27.6224, cameraPosition=(-27.0145, 
+    -127.223, 44.9229), cameraUpVector=(0.103316, 0.620834, 0.777104), 
+    cameraTarget=(0.938703, 0.187525, -1.23148))
+a = mdb.models['L4-L5_shell'].rootAssembly
+a.regenerate()
+a = mdb.models['L4-L5_shell'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p1 = mdb.models['L4-L5_shell'].parts['L4-L5-1']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+del mdb.models['L4-L5_shell'].parts['L4-L5-1'].sets['AF']
+mdb.models['L4-L5_shell'].parts['L4-L5-1'].deleteSets(setNames=('AF-Z1', 
+    'AF-Z2', 'AF_REBARS', 'BEPLOWER', 'BEPUPPER', ))
+del mdb.models['L4-L5_shell'].parts['L4-L5-1'].sets['ND-BEP-F']
+mdb.models['L4-L5_shell'].parts['L4-L5-1'].deleteSets(setNames=('ND-SURF', 
+    'NP', 'NP-Z1', 'NP-Z2', 'NP-Z3', 'NP-Z4', 'NP-Z5', 'REBARS_AI', 
+    'REBARS_AO', 'REBARS_PI', 'REBARS_PO', ))
+a = mdb.models['L4-L5_shell'].rootAssembly
+a.regenerate()
+a = mdb.models['L4-L5_shell'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.Job(name='templateCEPupper', model='L4-L5_shell', description='', 
+    type=ANALYSIS, atTime=None, waitMinutes=0, waitHours=0, queue=None, 
+    memory=90, memoryUnits=PERCENTAGE, getMemoryFromAnalysis=True, 
+    explicitPrecision=SINGLE, nodalOutputPrecision=SINGLE, echoPrint=OFF, 
+    modelPrint=OFF, contactPrint=OFF, historyPrint=OFF, userSubroutine='', 
+    scratch='', resultsFormat=ODB, multiprocessingMode=DEFAULT, numCpus=1, 
+    numGPUs=0)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+mdb.models['L4-L5_shell'].boundaryConditions.delete(('Disp-BC-1', 'Por-BC-1', 
+    ))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['templateCEPupper'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "templateCEPupper.inp".
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Carga_noche')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+mdb.models['L4-L5_shell'].loads.delete(('SURFFORCE-1', 'SURFFORCE-2', 
+    'SURFFORCE-3', 'SURFFORCE-4', ))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['templateCEPupper'].writeInput(consistencyChecking=OFF)
+#: The job input file has been written to "templateCEPupper.inp".
